@@ -28,6 +28,22 @@ function Main() {
                     <button>Assistir</button>
 
                 </div>
+
+                <div className="filme">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/ae8dddd0abc2fac14052f29bc2ae15ddd86374c0d3bd017171ee6473b8933b29.jpg" alt="" />
+                    <h2>Batman cavaleiros das trevas</h2>
+                    <p>2008</p>
+                    <button>Assistir</button>
+
+                </div>
+
+                <div className="filme">
+                    <img src="https://d3alv7ekdacjys.cloudfront.net/Custom/Content/Products/11/00/1100514_ta-dando-onda-filme-infantil-ms_z1_637382952582236308.jpg" alt="Ta dando onda" />
+                    <h2>Ta dando onda</h2>
+                    <p>2007</p>
+                    <button>Assistir</button>
+
+                </div>
             </div>
         </main>
     )
