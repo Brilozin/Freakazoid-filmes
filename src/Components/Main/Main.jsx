@@ -7,6 +7,16 @@ function Main() {
             <h1>Filmes em destaque</h1>
 
             <div className="filmes">
+
+                <div className="filme">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.zdveHEFRnxfxM9BU784xxgHaK4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ktchau!" />
+                    <h2>Ktchau!</h2>
+                    <p>2006</p>
+                    <button>Assistir</button>
+                </div>
+
+
+
                 <div className="filme">
                     <img src="https://tse1.mm.bing.net/th/id/OIP.hEWrJSlzUXiQMoa3sYqT-AHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Matrix" />
                     <h2>Matrix</h2>
