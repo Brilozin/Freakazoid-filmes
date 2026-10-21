@@ -6,7 +6,7 @@ function Footer() {
         <footer className="footer" id="sobre">
             <div className="footer-conteudo">
                 <div className="footer-logo">
-                    <h2>🎬 Freakazoid Filmes</h2>
+                    <h2>Freakazoid Filmes</h2>
                     <p>
                         Seu próximo filme favorito está aqui!
                     </p>
@@ -22,8 +22,8 @@ function Footer() {
                 <div className="footer-info">
                     <h3>Sobre nós</h3>
                     <p>
-                        Um espaço para descobrir filmes,
-                        explorar histórias e encontrar diversão.
+                        Uns filmes pirata ae pra 
+                        sua madrugada estepor
                     </p>
                 </div>
             </div>
@@ -33,7 +33,7 @@ function Footer() {
                     © {new Date().getFullYear()} Freakazoid Filmes.
                     Todos os direitos reservados.
                 </p>
-                <p>Feito com ❤️ para quem ama cinema.</p>
+
             </div>
         </footer>
     )
