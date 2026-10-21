@@ -2,7 +2,7 @@
 .main {
     padding: 30px;
     font-family: Arial, sans-serif;
-    color: #222;
+    color: #000000;
 }
 
 .filmes {
@@ -51,3 +51,4 @@
 .filme button:hover {
     background: #0056b3;
 }
+
