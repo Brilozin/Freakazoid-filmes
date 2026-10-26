@@ -7,22 +7,30 @@
 
 .filmes {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
 }
 
 .filme {
     width: 200px;
+    min-width: 200px;
+    height: 420px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .filme img {
     width: 100%;
     height: 260px;
+    min-height: 260px;
     object-fit: cover;
     display: block;
     border-radius: 5px;
@@ -31,6 +39,8 @@
 .filme h2 {
     font-size: 18px;
     margin: 12px 0 6px;
+    height: 42px;
+    overflow: hidden;
 }
 
 .filme p {
@@ -41,6 +51,7 @@
 .filme button {
     width: 100%;
     padding: 10px;
+    margin-top: auto;
     background: #087bff;
     color: white;
     border: none;
@@ -51,4 +62,3 @@
 .filme button:hover {
     background: #0056b3;
 }
-
