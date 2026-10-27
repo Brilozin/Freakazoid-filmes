@@ -4,7 +4,10 @@
     color: #ffffff;
     padding: 40px 30px 20px;
     font-family: Arial, sans-serif;
-    margin-top: 40px;
+    margin-top: 0;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-conteudo {
@@ -51,7 +54,7 @@
 }
 
 .footer-final {
-    border-top: 1px solid #374151;
+    border-top: none;
     margin-top: 30px;
     padding-top: 15px;
     text-align: center;

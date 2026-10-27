@@ -1,64 +1,208 @@
-
 .main {
-    padding: 30px;
+    min-height: 100vh;
+    padding: 40px 6%;
+    background-color: #101014;
+    color: #ffffff;
     font-family: Arial, sans-serif;
-    color: #fff9f9;
+}
+
+.main > h1 {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 38px;
+    color: #ffffff;
+}
+
+.subtitulo-main {
+    margin-bottom: 35px;
+    text-align: center;
+    color: #b8b8c2;
+    font-size: 16px;
 }
 
 .filmes {
-    display: flex;
-    gap: 15px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .filme {
-    width: 200px;
-    min-width: 200px;
-    height: 420px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
     overflow: hidden;
+    padding: 12px;
+    background-color: #1c1c24;
+    border: 1px solid #30303b;
+    border-radius: 12px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
 
-    display: flex;
-    flex-direction: column;
+.filme:hover {
+    transform: translateY(-7px);
+    border-color: #e50914;
 }
 
 .filme img {
-    width: 100%;
-    height: 260px;
-    min-height: 260px;
-    object-fit: cover;
     display: block;
-    border-radius: 5px;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #292932;
 }
 
 .filme h2 {
+    margin: 15px 0 8px;
     font-size: 18px;
-    margin: 12px 0 6px;
-    height: 42px;
-    overflow: hidden;
+    min-height: 42px;
 }
 
 .filme p {
-    margin: 5px 0 12px;
-    color: #666;
+    margin: 0 0 15px;
+    color: #b8b8c2;
+    font-size: 14px;
 }
 
 .filme button {
     width: 100%;
-    padding: 10px;
-    margin-top: auto;
-    background: #087bff;
-    color: white;
+    padding: 11px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    background-color: #e50914;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .filme button:hover {
-    background: #0056b3;
+    background-color: #b80710;
+    transform: scale(1.02);
+}
+
+/* Easter egg: vírus falso */
+
+.virus-easter-egg {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #050505;
+    color: #ffffff;
+    text-align: center;
+    animation: aparecer-virus 0.3s ease;
+}
+
+.virus-conteudo {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.virus-emoji {
+    margin-bottom: 15px;
+    font-size: clamp(80px, 15vw, 180px);
+    animation: tremer-virus 0.2s infinite;
+}
+
+.virus-conteudo h1 {
+    margin: 10px 0 20px;
+    color: #ff1515;
+    font-size: clamp(35px, 8vw, 90px);
+    font-weight: 900;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    text-shadow: 0 0 15px #ff0000, 0 0 35px #8b0000;
+}
+
+.virus-conteudo p {
+    font-size: clamp(16px, 3vw, 25px);
+}
+
+.virus-aviso {
+    color: #a5a5a5;
+    font-size: 14px !important;
+}
+
+.virus-conteudo button {
+    margin-top: 15px;
+    padding: 15px 24px;
+    border: 2px solid #ff2525;
+    border-radius: 8px;
+    background-color: #ff1515;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.virus-conteudo button:hover {
+    background-color: #b00000;
+}
+
+@keyframes aparecer-virus {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes tremer-virus {
+    0%, 100% {
+        transform: rotate(-4deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(4deg) scale(1.08);
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        padding: 25px 15px;
+    }
+
+    .main > h1 {
+        font-size: 29px;
+    }
+
+    .filmes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .filme {
+        padding: 8px;
+    }
+
+    .filme img {
+        height: 200px;
+    }
+
+    .filme h2 {
+        font-size: 15px;
+    }
+
+    .filme button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .filmes {
+        grid-template-columns: 1fr;
+    }
+
+    .filme img {
+        height: 300px;
+    }
 }
