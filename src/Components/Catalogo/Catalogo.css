@@ -1,89 +1,308 @@
 
 .pagina-filme {
+    position: relative;
+    isolation: isolate;
     min-height: 100vh;
-    padding: 30px 6%;
-    background-color: #f5f5f5;
-    color: #222222;
+    padding: 35px 6%;
+    overflow: hidden;
+    background: #07090d;
+    color: #fff;
     font-family: Arial, sans-serif;
 }
 
+.fundo-cinematografico {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 700px;
+    background:
+        radial-gradient(
+            ellipse at 75% 35%,
+            rgba(110, 15, 23, 0.2),
+            transparent 60%
+        ),
+        linear-gradient(
+            90deg,
+            #07090d 0%,
+            rgba(7, 9, 13, 0.92) 40%,
+            rgba(7, 9, 13, 0.5) 100%
+        );
+    pointer-events: none;
+}
+
+.conteudo-catalogo {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
 .voltar {
-    margin-bottom: 30px;
-    padding: 10px 16px;
-    border: 1px solid #dddddd;
-    border-radius: 6px;
-    background-color: white;
-    color: #222222;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 1px solid #34363c;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-size: 14px;
     cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.voltar span {
+    font-size: 20px;
+}
+
+.voltar:hover {
+    border-color: #e50914;
+    background: #e50914;
+    transform: translateX(-3px);
 }
 
 .detalhes-filme {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
     align-items: center;
-    gap: 50px;
-    max-width: 1100px;
-    margin: 30px auto;
+    gap: 70px;
+    margin: 55px auto 75px;
+}
+
+.lado-esquerdo {
+    max-width: 700px;
 }
 
 .etiqueta {
-    color: #e50914;
+    color: #ff2632;
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.etiqueta span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    letter-spacing: 7px;
 }
 
 .lado-esquerdo h1 {
-    color: #222222;
-    font-size: 42px;
+    margin: 22px 0 18px;
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
 }
 
 .metadados {
     display: flex;
-    gap: 15px;
-    color: #666666;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    color: #c1c1c8;
+    font-size: 14px;
+}
+
+.linha-vermelha {
+    width: 65px;
+    height: 4px;
+    margin: 30px 0;
+    border-radius: 5px;
+    background: #e50914;
+    box-shadow: 0 0 18px rgba(229, 9, 20, 0.4);
+}
+
+.lado-esquerdo h2 {
+    margin: 0 0 15px;
+    font-size: 27px;
 }
 
 .descricao-filme {
-    max-width: 600px;
-    color: #444444;
-    font-size: 17px;
-    line-height: 1.7;
+    color: #c6c6ce;
+    font-size: 16px;
+    line-height: 1.9;
 }
 
-.imagem-filme {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 8px 25px #0000001a;
+.acoes-filme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+.botao-assistir,
+.botao-secundario {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 50px;
+    padding: 14px 23px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.25s, background 0.25s,
+        border-color 0.25s;
 }
 
 .botao-assistir {
-    margin-top: 20px;
-    padding: 13px 24px;
-    border: none;
-    border-radius: 6px;
-    background-color: #e50914;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+    border: 1px solid #ff1b2d;
+    background: #e50914;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.2);
 }
 
 .botao-assistir:hover {
-    background-color: #b80710;
+    background: #ff2632;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.35);
 }
 
-@media (max-width: 700px) {
-    .detalhes-filme {
-        grid-template-columns: 1fr;
-        gap: 25px;
+.botao-assistir span {
+    font-size: 17px;
+}
+
+.botao-secundario {
+    border: 1px solid #45454d;
+    background: #17181e;
+    color: #fff;
+}
+
+.botao-secundario:hover {
+    border-color: #777;
+    background: #25262d;
+    transform: translateY(-3px);
+}
+
+.aviso-trailer {
+    margin-top: 17px;
+    color: #777983;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.lado-direito {
+    width: 100%;
+    max-width: 380px;
+    justify-self: center;
+}
+
+.moldura-poster {
+    position: relative;
+    padding: 8px;
+    overflow: hidden;
+    border: 1px solid #34363e;
+    border-radius: 12px;
+    background: #11131a;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.moldura-poster:hover {
+    transform: translateY(-7px) scale(1.015);
+    box-shadow: 0 30px 75px rgba(229, 9, 20, 0.12);
+}
+
+.imagem-filme {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.poster-legenda {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 7px 8px;
+    color: #9699a4;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.rodape-catalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 0 5px;
+    border-top: 1px solid #25262d;
+    color: #777983;
+    font-size: 13px;
+}
+
+.rodape-logo {
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.rodape-logo strong {
+    color: #e50914;
+}
+
+@media (max-width: 800px) {
+    .pagina-filme {
+        padding: 25px 5%;
     }
 
-    .lado-esquerdo h1 {
-        font-size: 32px;
+    .detalhes-filme {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 40px auto 55px;
+    }
+
+    .lado-esquerdo {
+        max-width: none;
     }
 
     .lado-direito {
-        max-width: 300px;
+        max-width: 320px;
+    }
+
+    .lado-esquerdo h1 {
+        letter-spacing: -1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-filme {
+        padding: 20px 16px;
+    }
+
+    .detalhes-filme {
+        margin-top: 32px;
+    }
+
+    .metadados {
+        gap: 12px;
+    }
+
+    .lado-esquerdo h2 {
+        font-size: 23px;
+    }
+
+    .descricao-filme {
+        font-size: 14px;
+    }
+
+    .acoes-filme {
+        flex-direction: column;
+    }
+
+    .botao-assistir,
+    .botao-secundario {
+        width: 100%;
+    }
+
+    .rodape-catalogo {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }

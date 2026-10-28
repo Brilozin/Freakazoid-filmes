@@ -1,78 +1,350 @@
 
 .footer {
-    background-color: #920a0a;
-    color: #ffffff;
-    padding: 40px 30px 20px;
-    font-family: Arial, sans-serif;
-    margin-top: 0;
-    border: none;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 0;
+    padding: 45px 6% 20px;
+    background: #07090d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #292a32;
 }
 
 .footer-conteudo {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 1fr;
+    gap: 55px;
+    max-width: 1250px;
     margin: 0 auto;
+    padding-bottom: 35px;
 }
 
-.footer-logo h2 {
-    color: #ffb800;
-    font-size: 24px;
-    margin-top: 0;
+/* MARCA */
+
+.footer-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-icone {
+    color: #e50914;
+    font-size: 35px;
+    transition: transform 0.25s ease;
+}
+
+.footer-marca:hover .footer-icone {
+    transform: scale(1.15);
+}
+
+.footer-marca > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.footer-marca strong {
+    color: #e50914;
+    font-size: 13px;
+    letter-spacing: 6px;
+}
+
+.footer-logo > p {
+    max-width: 300px;
+    margin-top: 20px;
+    color: #999ba5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* COLUNAS */
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
 }
 
 .footer h3 {
-    color: #ffb800;
-    margin-top: 0;
-    margin-bottom: 15px;
+    position: relative;
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 16px;
 }
 
-.footer p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    max-width: 320px;
+.footer h3::after {
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 5px;
+    background: #e50914;
+    content: '';
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-links a {
-    color: #cbd5e1;
+.footer-coluna > a {
+    color: #999ba5;
+    font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.footer-links a:hover {
-    color: #ffb800;
+.footer-coluna > a:hover {
+    color: #ff2632;
+    transform: translateX(4px);
 }
+
+.footer-info p {
+    max-width: 330px;
+    margin: 0;
+    color: #999ba5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* RODAPÉ FINAL */
 
 .footer-final {
-    border-top: none;
-    margin-top: 30px;
-    padding-top: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #292a32;
 }
 
 .footer-final p {
-    max-width: none;
-    font-size: 13px;
-    margin: 8px 0;
+    margin: 0;
+    color: #777983;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
-@media (max-width: 600px) {
+.voltar-topo {
+    color: #c4c5cc;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.voltar-topo:hover {
+    color: #ff2632;
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 750px) {
     .footer {
-        padding: 30px 20px 15px;
+        padding: 35px 22px 20px;
     }
 
     .footer-conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+    }
+
+    .footer-final {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 25px;
+    }
+}
+
+@media (max-width: 420px) {
+    .footer-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        grid-column: auto;
+    }
+}
+
+.footer {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 45px 6% 20px;
+    background: #07090d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #292a32;
+}
+
+.footer-conteudo {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 1fr;
+    gap: 55px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 35px;
+}
+
+/* MARCA */
+
+.footer-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-icone {
+    color: #e50914;
+    font-size: 35px;
+    transition: transform 0.25s ease;
+}
+
+.footer-marca:hover .footer-icone {
+    transform: scale(1.15);
+}
+
+.footer-marca > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.footer-marca strong {
+    color: #e50914;
+    font-size: 13px;
+    letter-spacing: 6px;
+}
+
+.footer-logo > p {
+    max-width: 300px;
+    margin-top: 20px;
+    color: #999ba5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* COLUNAS */
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.footer h3 {
+    position: relative;
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer h3::after {
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 5px;
+    background: #e50914;
+    content: '';
+}
+
+.footer-coluna > a {
+    color: #999ba5;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-coluna > a:hover {
+    color: #ff2632;
+    transform: translateX(4px);
+}
+
+.footer-info p {
+    max-width: 330px;
+    margin: 0;
+    color: #999ba5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* RODAPÉ FINAL */
+
+.footer-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #292a32;
+}
+
+.footer-final p {
+    margin: 0;
+    color: #777983;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.voltar-topo {
+    color: #c4c5cc;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.voltar-topo:hover {
+    color: #ff2632;
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 750px) {
+    .footer {
+        padding: 35px 22px 20px;
+    }
+
+    .footer-conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+    }
+
+    .footer-final {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .footer-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        grid-column: auto;
     }
 }

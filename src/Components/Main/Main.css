@@ -1,208 +1,342 @@
+
 .main {
     min-height: 100vh;
-    padding: 40px 6%;
-    background-color: #101014;
-    color: #ffffff;
+    padding: 0 6% 60px;
+    background: #07090d;
+    color: #fff;
     font-family: Arial, sans-serif;
 }
 
-.main > h1 {
-    margin: 0 0 10px;
-    text-align: center;
-    font-size: 38px;
-    color: #ffffff;
+/* DESTAQUE */
+
+.destaque-main {
+    padding: 75px 0 80px;
+    border-bottom: 1px solid #24262c;
+}
+
+.etiqueta-main {
+    color: #ff2632;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.destaque-main h1 {
+    margin: 22px 0 18px;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.destaque-main h1 span {
+    color: #e50914;
 }
 
 .subtitulo-main {
-    margin-bottom: 35px;
-    text-align: center;
-    color: #b8b8c2;
+    max-width: 520px;
+    margin: 0 0 28px;
+    color: #aaaab5;
     font-size: 16px;
+    line-height: 1.8;
 }
+
+.botao-explorar {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 21px;
+    border-radius: 6px;
+    background: #e50914;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.botao-explorar:hover {
+    transform: translateY(-3px);
+    background: #ff2632;
+    box-shadow: 0 8px 25px #e509142b;
+}
+
+/* CATÁLOGO */
+
+.secao-filmes {
+    padding: 45px 0 20px;
+}
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.titulo-secao h2 {
+    margin: 0 0 9px;
+    font-size: 27px;
+}
+
+.titulo-secao p {
+    margin: 0;
+    color: #92939e;
+    font-size: 14px;
+}
+
+.contador-filmes {
+    padding: 8px 12px;
+    border: 1px solid #30313a;
+    border-radius: 20px;
+    color: #c6c6ce;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* CAMPO DE BUSCA */
+
+.campo-busca-filmes {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 28px;
+    padding: 13px 15px;
+    border: 1px solid #30313a;
+    border-radius: 6px;
+    outline: none;
+    background: #111218;
+    color: #fff;
+    font-size: 14px;
+}
+
+.campo-busca-filmes:focus {
+    border-color: #e50914;
+}
+
+.campo-busca-filmes::placeholder {
+    color: #92939e;
+}
+
+/* CARDS DOS FILMES */
 
 .filmes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 25px;
-    max-width: 1250px;
-    margin: 0 auto;
+    align-items: stretch;
+    gap: 24px;
 }
 
 .filme {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    padding: 12px;
-    background-color: #1c1c24;
-    border: 1px solid #30303b;
-    border-radius: 12px;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #292a32;
+    border-radius: 10px;
+    background: #111218;
+    transition: transform 0.3s ease, border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .filme:hover {
     transform: translateY(-7px);
     border-color: #e50914;
+    box-shadow: 0 12px 30px #00000050;
+}
+
+/* PÔSTER */
+
+.imagem-container {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #191a21;
 }
 
 .filme img {
     display: block;
     width: 100%;
-    height: 280px;
+    height: 290px;
     object-fit: cover;
-    border-radius: 8px;
-    background-color: #292932;
+    transition: transform 0.4s ease;
 }
 
-.filme h2 {
-    margin: 15px 0 8px;
-    font-size: 18px;
-    min-height: 42px;
+.filme:hover img {
+    transform: scale(1.05);
 }
 
-.filme p {
-    margin: 0 0 15px;
-    color: #b8b8c2;
-    font-size: 14px;
-}
-
-.filme button {
-    width: 100%;
-    padding: 11px;
-    border: none;
-    border-radius: 6px;
-    background-color: #e50914;
-    color: white;
-    font-size: 15px;
+.ano-filme {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #e50914;
+    color: #fff;
+    font-size: 12px;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.filme button:hover {
-    background-color: #b80710;
-    transform: scale(1.02);
-}
+/* INFORMAÇÕES DOS FILMES */
 
-/* Easter egg: vírus falso */
-
-.virus-easter-egg {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
+.informacoes-filme {
+    padding: 16px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.informacoes-filme h3 {
+    height: 48px;
+    margin: 0 0 10px;
+    font-size: 17px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+.duracao-filme {
+    min-height: 17px;
+    margin: 0 0 18px;
+    color: #999ba5;
+    font-size: 12px;
+}
+
+/* BOTÕES ALINHADOS */
+
+.botao-filme {
+    display: flex;
     justify-content: center;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #050505;
-    color: #ffffff;
-    text-align: center;
-    animation: aparecer-virus 0.3s ease;
-}
-
-.virus-conteudo {
+    align-items: center;
     width: 100%;
-    max-width: 1000px;
+    margin-top: auto;
+    padding: 12px;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+    background: #e50914;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
-.virus-emoji {
-    margin-bottom: 15px;
-    font-size: clamp(80px, 15vw, 180px);
-    animation: tremer-virus 0.2s infinite;
+.botao-filme:hover {
+    background: #ff2632;
+    border-color: #ff2632;
 }
 
-.virus-conteudo h1 {
-    margin: 10px 0 20px;
-    color: #ff1515;
-    font-size: clamp(35px, 8vw, 90px);
-    font-weight: 900;
-    line-height: 1.05;
-    overflow-wrap: anywhere;
-    text-shadow: 0 0 15px #ff0000, 0 0 35px #8b0000;
+/* BUSCA SEM RESULTADOS */
+
+.nenhum-filme {
+    padding: 60px 20px;
+    text-align: center;
+    border: 1px dashed #34353d;
+    border-radius: 10px;
+    background: #111218;
 }
 
-.virus-conteudo p {
-    font-size: clamp(16px, 3vw, 25px);
+.nenhum-filme h3 {
+    margin-bottom: 10px;
 }
 
-.virus-aviso {
-    color: #a5a5a5;
-    font-size: 14px !important;
+.nenhum-filme p {
+    color: #999ba5;
 }
 
-.virus-conteudo button {
-    margin-top: 15px;
-    padding: 15px 24px;
-    border: 2px solid #ff2525;
-    border-radius: 8px;
-    background-color: #ff1515;
-    color: white;
-    font-size: 16px;
+.nenhum-filme button {
+    margin-top: 12px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #e50914;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
 }
 
-.virus-conteudo button:hover {
-    background-color: #b00000;
+/* SOBRE */
+
+.sobre-main {
+    margin-top: 55px;
+    padding: 35px;
+    border: 1px solid #292a32;
+    border-radius: 10px;
+    background:
+        radial-gradient(ellipse at right, #3b111827, transparent 70%),
+        #101116;
 }
 
-@keyframes aparecer-virus {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.sobre-main h2 {
+    margin: 15px 0 10px;
+    font-size: 28px;
 }
 
-@keyframes tremer-virus {
-    0%, 100% {
-        transform: rotate(-4deg) scale(1);
-    }
-
-    50% {
-        transform: rotate(4deg) scale(1.08);
-    }
+.sobre-main p {
+    max-width: 600px;
+    margin: 0;
+    color: #aaaab5;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
-@media (max-width: 600px) {
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
     .main {
-        padding: 25px 15px;
+        padding: 0 18px 40px;
     }
 
-    .main > h1 {
-        font-size: 29px;
+    .destaque-main {
+        padding: 55px 0;
+    }
+
+    .destaque-main h1 {
+        letter-spacing: -1px;
+    }
+
+    .titulo-secao {
+        align-items: flex-start;
+    }
+
+    .titulo-secao h2 {
+        font-size: 23px;
     }
 
     .filmes {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .filme {
-        padding: 8px;
+        gap: 14px;
     }
 
     .filme img {
-        height: 200px;
+        height: 230px;
     }
 
-    .filme h2 {
+    .informacoes-filme {
+        padding: 11px;
+    }
+
+    .informacoes-filme h3 {
         font-size: 15px;
     }
 
-    .filme button {
-        font-size: 13px;
+    .sobre-main {
+        padding: 24px;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .filmes {
         grid-template-columns: 1fr;
     }
 
     .filme img {
-        height: 300px;
+        height: 350px;
+    }
+
+    .contador-filmes {
+        display: none;
     }
 }
